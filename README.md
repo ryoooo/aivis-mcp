@@ -49,25 +49,6 @@ uv run python main.py
 
 ## 他クライアントへの追加方法
 
-### Context7 Web Search への連携
-
-1. Context7 の設定ファイル（例: `~/.config/context7/mcp.json`）に本サーバーを追記します。
-   ```json
-   {
-     "mcpServers": {
-       "avis-cloud": {
-         "command": "uv",
-         "args": ["run", "python", "/absolute/path/to/main.py"],
-         "env": {
-           "AIVIS_API_KEY": "あなたのAPIキー"
-         }
-       }
-     }
-   }
-   ```
-2. Context7 側のサーバー再読み込み後、`resolve-library-id` などの Context7 ツールと併用すれば、Web Search から Aivis Cloud API を直接呼び出せます。
-3. Context7 の公式 MCP 接続フォーマットは Upstash 提供の example を参照すると変換しやすいです（HTTP 接続の場合は `url` と `headers`、ローカル接続の場合は `command` / `args` を設定）。
-
 ### Claude Code への追加
 
 1. Claude Code CLI で以下のコマンドを実行し、MCP サーバーとして登録します。
