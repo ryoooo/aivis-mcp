@@ -1,0 +1,15 @@
+[project]
+name = "aivis-mcp"
+version = "0.1.0"
+description = "Aivis Cloud API を Model Context Protocol サーバー化する実装"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "fastmcp>=2.12.5",
+    "httpx[http2]>=0.28.1",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+aivis-mcp = "main:main"
