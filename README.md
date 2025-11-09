@@ -67,4 +67,4 @@ uv run python main.py
    args = ["run", "python", "/absolute/path/to/main.py"]
    env = { AIVIS_API_KEY = "あなたのAPIキー" }
    ```
-2. Windows や macOS で Python のフルパスが必要な場合は、Context7 公式ドキュメントのように `command` / `args` に絶対パスを指定してください。
+
