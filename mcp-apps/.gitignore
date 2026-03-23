@@ -1,0 +1,16 @@
+# Node.js / Bun
+node_modules/
+dist/
+*.local
+
+# Environment variables
+.env
+.env.local
+!.env.example
+
+# Editor / IDE
+.vscode/
+.idea/
+.claude
+.devcontainer
+.qodo

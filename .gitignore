@@ -33,9 +33,9 @@ aivis/
 .idea/
 
 openapi.json
-aivis/
 .uv_cache
 article.md
 *.png
+docs/
 
 mybook

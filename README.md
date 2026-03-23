@@ -1,6 +1,15 @@
 # Aivis MCP Server
 
-このリポジトリは、`openapi.json` の定義をもとに [FastMCP](https://github.com/jlowin/fastmcp) で Aivis Cloud API を MCP サーバー化する実装例です。音声合成エンドポイント `/v1/tts/synthesize` をホワイトリスト方式で公開し、Claude Desktop などの MCP クライアントから安全に呼び出せるようにしています。
+Aivis Cloud TTS API を MCP サーバー化する実装例です。Python（FastMCP）と TypeScript（MCP Apps）の 2 つの実装を収録しています。
+
+| 実装 | ディレクトリ | 技術スタック | 特徴 |
+|---|---|---|---|
+| Python版 | ルート直下 (`main.py`) | Python + FastMCP + httpx | OpenAPI 定義からツールを自動生成、stdio/HTTP 対応 |
+| TypeScript版 | [`mcp-apps/`](./mcp-apps/) | TypeScript + Bun + Hono + MCP Apps | インタラクティブな音声再生 UI、Streamable HTTP |
+
+## Python 版（FastMCP）
+
+`openapi.json` の定義をもとに [FastMCP](https://github.com/jlowin/fastmcp) で Aivis Cloud API を MCP サーバー化する実装です。音声合成エンドポイント `/v1/tts/synthesize` をホワイトリスト方式で公開し、Claude Desktop などの MCP クライアントから安全に呼び出せるようにしています。
 
 ## セットアップ
 
@@ -68,3 +77,14 @@ uv run python main.py
    env = { AIVIS_API_KEY = "あなたのAPIキー" }
    ```
 
+## TypeScript 版（MCP Apps）
+
+MCP Apps 拡張を使い、チャット内にインライン表示される音声再生 UI を備えた実装です。詳細は [`mcp-apps/README.md`](./mcp-apps/README.md) を参照してください。
+
+```bash
+cd mcp-apps
+bun install
+cp .env.example .env
+# .env に AIVIS_API_KEY を設定
+bun run build && bun run server
+```

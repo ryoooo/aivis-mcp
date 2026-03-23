@@ -1,0 +1,30 @@
+{
+  "name": "aivis-mcp-apps",
+  "private": true,
+  "type": "module",
+  "module": "index.ts",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "server": "bun run server.ts",
+    "lint": "bunx oxlint --tsconfig ./tsconfig.json --type-aware .",
+    "format": "bunx oxfmt --write .",
+    "typecheck": "bunx tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.2.2",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "hono": "^4.12.8",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/bun": "latest",
+    "daisyui": "^5.5.16",
+    "oxlint-tsgolint": "^0.11.4",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
